@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  postfixadmin:
+    image: postfixadmin:latest
+    ports:
+      - "${POSTFIXADMIN_PUBLIC_PORT}:80"  # Adjust port if needed
+    environment:
+      # POSTFIXADMIN_DB_TYPE: sqlite
+      POSTFIXADMIN_DB_HOST: ${POSTFIXADMIN_DB_HOST}
+      POSTFIXADMIN_DB_NAME: ${POSTFIXADMIN_DB_NAME}
+      POSTFIXADMIN_DB_USER: ${POSTFIXADMIN_DB_USER}
+      POSTFIXADMIN_DB_PASSWORD: ${POSTFIXADMIN_DB_PASSWORD}
+      POSTFIXADMIN_SMTP_SERVER: ${POSTFIXADMIN_SMTP_SERVER}
+      POSTFIXADMIN_SMTP_PORT: ${POSTFIXADMIN_SMTP_SERVER}
+    # todo: volume
