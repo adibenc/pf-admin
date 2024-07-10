@@ -14,4 +14,7 @@ services:
       POSTFIXADMIN_DB_PASSWORD: ${POSTFIXADMIN_DB_PASSWORD}
       POSTFIXADMIN_SMTP_SERVER: ${POSTFIXADMIN_SMTP_SERVER}
       POSTFIXADMIN_SMTP_PORT: ${POSTFIXADMIN_SMTP_SERVER}
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    restart: always
     # todo: volume
